@@ -1,0 +1,71 @@
+services:
+  # ----------------------------------------------------------------------------
+  # PostgreSQL 16 Database
+  # ----------------------------------------------------------------------------
+  postgres:
+    image: postgres:16-alpine
+    container_name: mes-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: mes_db
+      POSTGRES_USER: mes_user
+      POSTGRES_PASSWORD: mes_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - mes_pgdata:/var/lib/postgresql/data
+      - ./database/seed_data.sql:/docker-entrypoint-initdb.d/02_seed_data.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mes_user -d mes_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - mes-network
+
+  # ----------------------------------------------------------------------------
+  # Spring Boot 3.x Backend (Hard-Stop Validation & Yield Engine)
+  # ----------------------------------------------------------------------------
+  backend:
+    build:
+      context: ./Mes
+      dockerfile: Dockerfile
+    container_name: mes-backend
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/mes_db?stringtype=unspecified
+      SPRING_DATASOURCE_USERNAME: mes_user
+      SPRING_DATASOURCE_PASSWORD: mes_password
+      SPRING_JPA_HIBERNATE_DDL_AUTO: validate
+      SPRING_FLYWAY_ENABLED: "true"
+    ports:
+      - "8080:8080"
+    networks:
+      - mes-network
+
+  # ----------------------------------------------------------------------------
+  # React + Vite Production Nginx Frontend (QR Scanner & Operator UI)
+  # ----------------------------------------------------------------------------
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: mes-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+    networks:
+      - mes-network
+
+volumes:
+  mes_pgdata:
+    driver: local
+
+networks:
+  mes-network:
+    driver: bridge
