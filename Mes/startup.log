@@ -1,0 +1,143 @@
+[INFO] Scanning for projects...
+[INFO] Loaded 24313 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+[INFO] 
+[INFO] --------------------------< com.factory:mes >---------------------------
+[INFO] Building  0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:4.1.2:run (default-cli) > test-compile @ mes >>>
+[INFO] Loaded 24313 auto-discovered prefixes for remote repository maven-central (prefixes-maven-central.txt)
+[WARNING] Could not transfer metadata /.meta/prefixes.txt from/to flyway-community-db-support (https://maven.pkg.github.com/flyway/flyway-community-db-support): HTTP Status: 401
+[WARNING] Could not transfer metadata /.meta/prefixes.txt from/to MavenFeed (https://red-gate.pkgs.visualstudio.com/MavenFeed/_packaging/MavenFeed/maven/v1/): HTTP Status: 401
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ mes ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ mes ---
+[INFO] Loaded 74 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ mes ---
+[INFO] skip non existing resourceDirectory /Users/apple/Project/Shop-Floor-View/mes/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ mes ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< spring-boot:4.1.2:run (default-cli) < test-compile @ mes <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:4.1.2:run (default-cli) @ mes ---
+[INFO] Loaded 50 auto-discovered prefixes for remote repository ow2-snapshot (prefixes-ow2-snapshot.txt)
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.2)
+
+2026-10-31T21:58:37.146+05:30  INFO 18104 --- [mes] [           main] com.factory.mes.MesApplication           : Starting MesApplication using Java 25.0.3 with PID 18104 (/Users/apple/Project/Shop-Floor-View/mes/target/classes started by apple in /Users/apple/Project/Shop-Floor-View/mes)
+2026-10-31T21:58:37.150+05:30  INFO 18104 --- [mes] [           main] com.factory.mes.MesApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-10-31T21:58:38.144+05:30  INFO 18104 --- [mes] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-31T21:58:38.174+05:30  INFO 18104 --- [mes] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 0 JPA repository interfaces.
+2026-10-31T21:58:38.852+05:30  INFO 18104 --- [mes] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-10-31T21:58:38.875+05:30  INFO 18104 --- [mes] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-31T21:58:38.875+05:30  INFO 18104 --- [mes] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-10-31T21:58:38.936+05:30  INFO 18104 --- [mes] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1679 ms
+2026-10-31T21:58:39.308+05:30  INFO 18104 --- [mes] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-31T21:58:40.476+05:30  WARN 18104 --- [mes] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: FATAL: role "postgres" does not exist
+--------------------------------------------------------------------------------
+SQL State  : 28000
+Error Code : 0
+Message    : FATAL: role "postgres" does not exist
+
+2026-10-31T21:58:40.482+05:30  INFO 18104 --- [mes] [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-10-31T21:58:40.497+05:30  INFO 18104 --- [mes] [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-10-31T21:58:40.520+05:30 ERROR 18104 --- [mes] [           main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: FATAL: role "postgres" does not exist
+--------------------------------------------------------------------------------
+SQL State  : 28000
+Error Code : 0
+Message    : FATAL: role "postgres" does not exist
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-7.0.10.jar:7.0.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.10.jar:7.0.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977) ~[spring-context-7.0.10.jar:7.0.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.10.jar:7.0.10]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:131) ~[spring-boot-web-server-4.1.2.jar:4.1.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744) ~[spring-boot-4.1.2.jar:4.1.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:433) ~[spring-boot-4.1.2.jar:4.1.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:309) ~[spring-boot-4.1.2.jar:4.1.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1353) ~[spring-boot-4.1.2.jar:4.1.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1342) ~[spring-boot-4.1.2.jar:4.1.2]
+	at com.factory.mes.MesApplication.main(MesApplication.java:10) ~[classes/:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: FATAL: role "postgres" does not exist
+--------------------------------------------------------------------------------
+SQL State  : 28000
+Error Code : 0
+Message    : FATAL: role "postgres" does not exist
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1815) ~[spring-beans-7.0.10.jar:7.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) ~[spring-beans-7.0.10.jar:7.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-7.0.10.jar:7.0.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.10.jar:7.0.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.10.jar:7.0.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.10.jar:7.0.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.10.jar:7.0.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309) ~[spring-beans-7.0.10.jar:7.0.10]
+	... 10 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.sqlExceptions.FlywaySqlUnableToConnectToDbException: Unable to obtain connection from database: FATAL: role "postgres" does not exist
+--------------------------------------------------------------------------------
+SQL State  : 28000
+Error Code : 0
+Message    : FATAL: role "postgres" does not exist
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:78) ~[flyway-core-12.4.0.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:76) ~[flyway-core-12.4.0.jar:na]
+	at org.flywaydb.core.FlywayExecutor.init(FlywayExecutor.java:275) ~[flyway-core-12.4.0.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:120) ~[flyway-core-12.4.0.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:181) ~[flyway-core-12.4.0.jar:na]
+	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:55) ~[spring-boot-flyway-4.1.2.jar:4.1.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862) ~[spring-beans-7.0.10.jar:7.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1811) ~[spring-beans-7.0.10.jar:7.0.10]
+	... 17 common frames omitted
+Caused by: org.postgresql.util.PSQLException: FATAL: role "postgres" does not exist
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993) ~[postgresql-42.7.14.jar:42.7.14]
+	at org.postgresql.core.v3.QueryExecutorImpl.readStartupMessages(QueryExecutorImpl.java:3118) ~[postgresql-42.7.14.jar:42.7.14]
+	at org.postgresql.core.v3.QueryExecutorImpl.<init>(QueryExecutorImpl.java:251) ~[postgresql-42.7.14.jar:42.7.14]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:398) ~[postgresql-42.7.14.jar:42.7.14]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:52) ~[postgresql-42.7.14.jar:42.7.14]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:295) ~[postgresql-42.7.14.jar:42.7.14]
+	at org.postgresql.Driver.makeConnection(Driver.java:437) ~[postgresql-42.7.14.jar:42.7.14]
+	at org.postgresql.Driver.connect(Driver.java:305) ~[postgresql-42.7.14.jar:42.7.14]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-7.0.2.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:73) ~[flyway-core-12.4.0.jar:na]
+	... 24 common frames omitted
+
+[INFO] ------------------------------------------------------------------------
+[ERROR] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  11.266 s
+[INFO] Finished at: 2026-10-31T21:58:40+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:4.1.2:run (default-cli) on project mes: Process terminated with exit code: 1 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
